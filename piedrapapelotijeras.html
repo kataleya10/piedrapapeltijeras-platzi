@@ -25,25 +25,30 @@
         }
         //1 es piedra, 2 es papel, 3 es tijeras
         let jugador = 0
-        let pc = 2
-        jugador = prompt("Elije: 1 para ✊🏻, 2 para ✋🏻, 3 para ✌🏻")
-        //alert( "Elegiste " + jugador )
+        let pc = 0
+        let triunfos = 0
+        let perdidas = 0
 
-        alert("PC elige " + eleccion(pc))
-        alert("Tú eliges " + eleccion(jugador))
+        while (triunfos < 3 && perdidas < 3) {
+            pc = aleatorio(1, 3)
+            jugador = prompt("Elije: 1 para ✊🏻, 2 para ✋🏻, 3 para ✌🏻")
+            //alert( "Elegiste " + jugador )
 
-        // .COMBATE
-        if (pc == jugador) {
-            alert("EMPATE")
-        } else if (jugador == 1 && pc == 3) {
-            alert("GANASTE")
-        } else if (jugador == 2 && pc == 1) {
-            alert("GANASTE")
-        } else if (jugador == 3 && pc == 2) {
-            alert("GANASTE")
-        } else {
-            alert("PERDISTE☠️")
-        }
+            alert("PC elige " + eleccion(pc))
+            alert("Tú eliges " + eleccion(jugador))
+
+            // .COMBATE
+            if (pc == jugador) {
+                alert("EMPATE")
+            } else if (jugador == 1 && pc == 3) {
+                alert("GANASTE")
+            } else if (jugador == 2 && pc == 1) {
+                alert("GANASTE")
+            } else if (jugador == 3 && pc == 2) {
+                alert("GANASTE")
+            } else {
+                alert("PERDISTE☠️")
+            }
 
     </script>
     <style>
