@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Piedra,Papel o Tijeras </title>
-        <link rel="shorcut icon" href="icons/piedra-papel-tijeras.png">
-        <script>
-           //1 es piedra, 2 es papel, 3 es tijeras
-           let jugador = 0
-           let pc = 2
-           jugador = prompt ("Elije: 1 para ✊🏻, 2 para ✋🏻, 3 para ✌🏻")
-           //alert( "Elegiste " + jugador )
 
-        </script>
-        <style>
-            body {
-                background-color: rgba(186, 116, 196, 0.849);
+<head>
+    <meta charset="utf-8" />
+    <title>Piedra,Papel o Tijeras </title>
+    <link rel="shorcut icon" href="icons/piedra-papel-tijeras.png">
+    <script>
+        function aleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        function eleccion(jugada) {
+            let resultado = ""
+            if (jugada == 1) {
+                resultado = "Piedra ✊🏻"
+            } else if (jugada == 2) {
+                resultado = "Papel ✋🏻"
+            } else if (jugada == 3) {
+                resultado = "Tijera ✌🏻"
+            } else {
+                resultado = "MAL ELEGIDO"
             }
-        </style>
-    </head>
-    <body>
-        <h1> Piedra, Papel o Tijeras </h1>
-        <h2></h2>
-        
-    </body>
+            return resultado
+        }
+        //1 es piedra, 2 es papel, 3 es tijeras
+        let jugador = 0
+        let pc = 2
+        jugador = prompt("Elije: 1 para ✊🏻, 2 para ✋🏻, 3 para ✌🏻")
+        //alert( "Elegiste " + jugador )
+
+        alert("PC elige " + eleccion(pc))
+        alert("Tú eliges " + eleccion(jugador))
+
+        // .COMBATE
+        if (pc == jugador) {
+            alert("EMPATE")
+        } else if (jugador == 1 && pc == 3) {
+            alert("GANASTE")
+        } else if (jugador == 2 && pc == 1) {
+            alert("GANASTE")
+        } else if (jugador == 3 && pc == 2) {
+            alert("GANASTE")
+        } else {
+            alert("PERDISTE☠️")
+
+    </script>
+    <style>
+        body {
+            background-color: rgba(186, 116, 196, 0.849);
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Piedra, Papel o Tijeras </h1>
+    <h2></h2>
+
+</body>
+
 </html>
